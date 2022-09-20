@@ -5,7 +5,7 @@ const db = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
-        password: 'Jordan36!',
+        password: '',
         database: 'tracker_db'
     },
     console.log(`Connected to the tracker_db database.`)
@@ -55,7 +55,7 @@ function mainQuestion() {
 function viewAllEmployees() {
     db.promise().query('SELECT * FROM employee').then(function ([results, fields]) {
         console.table(results);
-        console.log("=======================================")
+        console.log(" ")
         mainQuestion();
     });
 }
@@ -90,7 +90,7 @@ function addEmployee() {
                 }
             ]).then(function (response) {
                 db.promise().query('INSERT INTO employee (first_name,last_name,role_id,manager_id)VALUES(?,?,?,?)', [response.employeeFirstName, response.employeeLastName, response.employeeRole, response.employeeManager]).then(function ([results, fields]) {
-                    console.log("=======================================")
+                    console.log(" ")
                     mainQuestion()
                 })
             })
@@ -118,7 +118,7 @@ function updateEmployeeRole() {
                 }
             ]).then(function (response) {
                 db.promise().query('UPDATE employee SET role_id = ? WHERE employee.id = ?', [response.employeeRole, response.employeeName]).then(function ([results, fields]) {
-                    console.log("=======================================")
+                    console.log(" ")
                     mainQuestion()
                 })
             })
@@ -129,7 +129,7 @@ function updateEmployeeRole() {
 function viewAllRoles() {
     db.promise().query('SELECT * FROM role').then(function ([results, fields]) {
         console.table(results);
-        console.log("=======================================")
+        console.log(" ")
         mainQuestion();
     });
 }
@@ -158,7 +158,7 @@ function addRole() {
                 },
             ]).then(function (response) {
                 db.promise().query('INSERT INTO role (title,salary,department_id)VALUES(?,?,?)', [response.roleName, response.roleSalary, response.department]).then(function ([results, fields]) {
-                    console.log("=======================================")
+                    console.log(" ")
                     mainQuestion()
                 })
             })
@@ -169,7 +169,7 @@ function addRole() {
 function viewAllDepartments() {
     db.promise().query('SELECT * FROM department').then(function ([results, fields]) {
         console.table(results);
-        console.log("=======================================")
+        console.log(" ")
         mainQuestion();
     });
 }
@@ -185,7 +185,7 @@ function addDepartment() {
                 },
             ]).then(function (response) {
                 db.promise().query('INSERT INTO department (name)VALUES(?)', [response.departmentName]).then(function ([results, fields]) {
-                    console.log("=======================================")
+                    console.log(" ")
                     mainQuestion()
                 })
             })
