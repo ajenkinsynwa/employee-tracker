@@ -17,7 +17,8 @@ function mainQuestion() {
             type: 'list',
             message: 'What would you like to do?',
             name: 'action',
-            choices: ["view all employees", "add employee", "update employee role", "view all roles", "add role", "view all departments", "add department", "quit"],
+            choices: ["view all employees", "add employee", "update employee role", 
+            "view all roles", "add role", "view all departments", "add department", "quit"],
         }
     ]).then(answer => {
         switch (answer.action) {
@@ -116,7 +117,8 @@ function updateEmployeeRole() {
                     choices: roles
                 }
             ]).then(function (response) {
-                db.promise().query('UPDATE employee SET role_id = ? WHERE employee.id = ?', [response.employeeRole, response.employeeName]).then(function ([results, fields]) {
+                db.promise().query('UPDATE employee SET role_id = ? WHERE employee.id = ?', 
+                [response.employeeRole, response.employeeName]).then(function ([results, fields]) {
                     console.log(" ")
                     mainQuestion()
                 })
@@ -156,7 +158,8 @@ function addRole() {
                     choices: departments
                 },
             ]).then(function (response) {
-                db.promise().query('INSERT INTO role (title,salary,department_id)VALUES(?,?,?)', [response.roleName, response.roleSalary, response.department]).then(function ([results, fields]) {
+                db.promise().query('INSERT INTO role (title,salary,department_id)VALUES(?,?,?)', 
+                [response.roleName, response.roleSalary, response.department]).then(function ([results, fields]) {
                     console.log(" ")
                     mainQuestion()
                 })
@@ -183,7 +186,8 @@ function addDepartment() {
                     message: "What is the name of the department?"
                 },
             ]).then(function (response) {
-                db.promise().query('INSERT INTO department (name)VALUES(?)', [response.departmentName]).then(function ([results, fields]) {
+                db.promise().query('INSERT INTO department (name)VALUES(?)', 
+                [response.departmentName]).then(function ([results, fields]) {
                     console.log(" ")
                     mainQuestion()
                 })
