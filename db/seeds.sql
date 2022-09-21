@@ -21,7 +21,6 @@ VALUES ("Lead Engineer", 100000, 1),
        ("Marketing Staff", 90000, 4);
 
 /* Employee Table */
-
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("Dana", "Jenkins", 1, NULL),
        ("Sam", "Sung", 2, 1),
