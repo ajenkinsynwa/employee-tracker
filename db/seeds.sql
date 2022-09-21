@@ -1,5 +1,6 @@
 USE tracker_db;
 
+/*Department Table */
 INSERT INTO department (name)
 VALUES ("Engineering"),
        ("Technology service"),
@@ -7,7 +8,7 @@ VALUES ("Engineering"),
        ("Marketing");
   
 /* Role Table */
-INSERT INTO role (title, salary, department_id)
+INSERT INTO role (title, salary, department_id) 
 VALUES ("Lead Engineer", 100000, 1),
        ("Software Engineer", 90000, 1),
 
