@@ -1,33 +1,33 @@
-USE employee_db;
+USE tracker_db;
 
 INSERT INTO department (name)
 VALUES ("Engineering"),
-       ("Customer service"),
+       ("Technology service"),
        ("Finance"),
        ("Marketing");
   
 /* Role Table */
 INSERT INTO role (title, salary, department_id)
-VALUES ("Lead Engineer", 300000, 1),
-       ("Software Engineer", 200000, 1),
+VALUES ("Lead Engineer", 100000, 1),
+       ("Software Engineer", 90000, 1),
 
-       ("Head of Customer service", 130000, 2),
-       ("Customer Service Cordinator", 100000, 2),
+       ("Head of Technology service", 190000, 2),
+       ("Technology Service Cordinator", 110000, 2),
 
-       ("Account Manager", 150000, 3),
-       ("Accountant", 130000, 3),
+       ("Account Manager", 130000, 3),
+       ("Accountant", 120000, 3),
 
-       ("Marketing Team Lead", 200000, 4),
-       ("Marketing Staff", 100000, 4);
+       ("Marketing Team Lead", 100000, 4),
+       ("Marketing Staff", 90000, 4);
 
 /* Employee Table */
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Cindy", "Chynoweth", 1, NULL),
-       ("Sami", "Jameson", 2, 1),
-       ("Gracie", "Smith", 3, NULL), 
-       ("Kaylee", "Brown", 4, 3),
-       ("Emily", "Richards",5, NULL),
-       ("Maddie", "Stevens", 6, 5),
-       ("Jenny", "Drake", 7, NULL),
-       ("Jessie", "Black", 8, 7);
+VALUES ("Dana", "Jenkins", 1, NULL),
+       ("Sam", "Sung", 2, 1),
+       ("Devan", "Cooley", 3, NULL), 
+       ("Dana", "Ann", 4, 3),
+       ("Emily", "Jenkins",5, NULL),
+       ("Andrew", "Oseman", 6, 5),
+       ("Jenny", "Stills", 7, NULL),
+       ("Bailey", "Hood", 8, 7);

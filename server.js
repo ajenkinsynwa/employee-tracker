@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 
 const db = mysql.createConnection(
     {
-        host: 'localhost',
+        host: '127.0.0.1',
         user: 'root',
         password: '',
         database: 'tracker_db'
@@ -56,7 +56,6 @@ function viewAllEmployees() {
     db.promise().query('SELECT * FROM employee').then(function ([results, fields]) {
         console.table(results);
         console.log(" ")
-        mainQuestion();
     });
 }
 
@@ -113,7 +112,7 @@ function updateEmployeeRole() {
                 {
                     name: "employeeRole",
                     type: "list",
-                    message: "Who is the employee's new role?",
+                    message: "What is the employee's new role?",
                     choices: roles
                 }
             ]).then(function (response) {
