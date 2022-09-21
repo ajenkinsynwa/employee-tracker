@@ -8,7 +8,7 @@ const db = mysql.createConnection(
         password: '',
         database: 'tracker_db'
     },
-    console.log(`Connected to the tracker_db database.`)
+    console.log(`Welcome! Glad you are here!`)
 );
 
 function mainQuestion() {
