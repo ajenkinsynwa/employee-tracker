@@ -88,7 +88,7 @@ function addEmployee() { //type the first name, last name, id role from the empl
                     message: "Who is the employee's manager?",
                     choices: managers
                 }
-            ]).then(function (response) { //instert 
+            ]).then(function (response) { //query request the prompt questions exchanging that information
                 db.promise().query('INSERT INTO employee (first_name,last_name,role_id,manager_id)VALUES(?,?,?,?)', [response.employeeFirstName, response.employeeLastName, response.employeeRole, response.employeeManager]).then(function ([results, fields]) {
                     console.log(" ")
                     mainQuestion()
