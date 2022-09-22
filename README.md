@@ -41,7 +41,7 @@ it to the system using JavaScript and excuting it on a server using node.js.
 # Visual 2 
 
 
-![Application Web Pages".](/images/main2.png)
+![Application Web Pages".](/images/screenshot.png)
 
 
 # Video Guide 
