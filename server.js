@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const db = mysql.createConnection(
     {
         host: '127.0.0.1', //changed the local host to this MAC address the local was not working
-        user: 'root',
+        user: 'root',  //AskBCS Learning Assistant assisted me with the host name 
         password: '',
         database: 'tracker_db'
     },
@@ -65,7 +65,7 @@ function addEmployee() { //type the first name, last name, id role from the empl
         const managers = results.map(employee => { return { name: employee.first_name + " " + employee.last_name, value: employee.id } })
         db.promise().query('SELECT title, id FROM role').then(function ([roleResults, fields]) {
             const roles = roleResults.map(role => { return { name: role.title, value: role.id } })
-            inquirer.prompt({ 
+            inquirer.prompt([
                 {
                     name: "employeeFirstName",
                     type: "input",
@@ -88,7 +88,7 @@ function addEmployee() { //type the first name, last name, id role from the empl
                     message: "Who is the employee's manager?",
                     choices: managers
                 }
-            ]).then(function (response) {
+            ]).then(function (response) { //instert 
                 db.promise().query('INSERT INTO employee (first_name,last_name,role_id,manager_id)VALUES(?,?,?,?)', [response.employeeFirstName, response.employeeLastName, response.employeeRole, response.employeeManager]).then(function ([results, fields]) {
                     console.log(" ")
                     mainQuestion()
