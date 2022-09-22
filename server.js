@@ -116,7 +116,7 @@ function updateEmployeeRole() {
                     message: "What is the employee's new role?",
                     choices: roles
                 }
-            ]).then(function (response) {
+            ]).then(function (response) { //updates the new role of the employee 
                 db.promise().query('UPDATE employee SET role_id = ? WHERE employee.id = ?', 
                 [response.employeeRole, response.employeeName]).then(function ([results, fields]) {
                     console.log(" ")
@@ -127,7 +127,7 @@ function updateEmployeeRole() {
     })
 }
 
-function viewAllRoles() {
+function viewAllRoles() { 
     db.promise().query('SELECT * FROM role').then(function ([results, fields]) {
         console.table(results);
         console.log(" ")
@@ -140,7 +140,7 @@ function addRole() {
         const role = roleResults.map(role => { return { name: role.title, value: role.salary, value: role.id } })
         db.promise().query('SELECT name, id FROM department').then(function ([deptResults, fields]) {
             const departments = deptResults.map(departments => { return { name: departments.name, value: departments.id } })
-            inquirer.prompt([
+            inquirer.prompt([ //promnts the series of questions
                 {
                     name: "roleName",
                     type: "input",
@@ -157,7 +157,7 @@ function addRole() {
                     message: "What department does this role belong to?",
                     choices: departments
                 },
-            ]).then(function (response) {
+            ]).then(function (response) {  
                 db.promise().query('INSERT INTO role (title,salary,department_id)VALUES(?,?,?)', 
                 [response.roleName, response.roleSalary, response.department]).then(function ([results, fields]) {
                     console.log(" ")
