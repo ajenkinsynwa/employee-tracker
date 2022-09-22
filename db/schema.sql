@@ -1,8 +1,11 @@
 DROP DATABASE IF EXISTS tracker_db;
+--created file
 CREATE DATABASE tracker_db;
+
 
 USE tracker_db;
 
+--tables created for each category 
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30) NOT NULL
@@ -30,8 +33,4 @@ CREATE TABLE employee (
   FOREIGN KEY (manager_id)
   REFERENCES employee(id)
   ON DELETE SET NULL
-);
-
-DESCRIBE department;
-DESCRIBE role;
-DESCRIBE employee;
+); --Select department id 
