@@ -9,7 +9,8 @@ VALUES ("Engineering"),
   
 /* Role Table */
 INSERT INTO role (title, salary, department_id) 
-VALUES ("Lead Engineer", 100000, 1),
+VALUES 
+       ("Lead Engineer", 100000, 1),
        ("Software Engineer", 90000, 1),
 
        ("Head of Technology service", 190000, 2),
@@ -18,10 +19,10 @@ VALUES ("Lead Engineer", 100000, 1),
        ("Account Manager", 130000, 3),
        ("Accountant", 120000, 3),
 
-       ("Marketing Team Lead", 100000, 4),
+       ("Marketing Team Lead", 10000, 4),
        ("Marketing Staff", 90000, 4);
 
-/* Employee Table */
+/* Employee Table */ /* updated employee names and salary for insert purposes*/
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("Dana", "Jenkins", 1, NULL),
        ("Sam", "Sung", 2, 1),
