@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 
 const db = mysql.createConnection(
     {
-        host: '127.0.0.1',
+        host: '127.0.0.1', //changed the local host to this MAC address the local was not working
         user: 'root',
         password: '',
         database: 'tracker_db'
@@ -12,7 +12,7 @@ const db = mysql.createConnection(
 );
 
 function mainQuestion() {
-    inquirer.prompt([
+    inquirer.prompt([ // command line interface for node inquirer prompt that lets you select roles
         {
             type: 'list',
             message: 'What would you like to do?',
