@@ -60,12 +60,12 @@ function viewAllEmployees() {
     });
 }
 
-function addEmployee() {
+function addEmployee() { //type the first name, last name, id role from the employee search
     db.promise().query('SELECT first_name, last_name, id FROM employee').then(function ([results, fields]) {
         const managers = results.map(employee => { return { name: employee.first_name + " " + employee.last_name, value: employee.id } })
         db.promise().query('SELECT title, id FROM role').then(function ([roleResults, fields]) {
             const roles = roleResults.map(role => { return { name: role.title, value: role.id } })
-            inquirer.prompt([
+            inquirer.prompt({ 
                 {
                     name: "employeeFirstName",
                     type: "input",
