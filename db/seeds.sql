@@ -1,5 +1,5 @@
 USE tracker_db;
-
+/* AskBCS Learning Assistant assisted me changed all to tracker_db 
 /*Department Table */
 INSERT INTO department (name)
 VALUES ("Engineering"),
