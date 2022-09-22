@@ -44,5 +44,5 @@ it to the system using JavaScript and excuting it on a server using node.js.
 ![Application Web Pages".](/images/screenshot.png)
 
 
-# Video Guide 
+# Video Walk Through 
 [Video Link](https://drive.google.com/file/d/1XvnG4lb0OZaLFFWCNo__MaBxf2-IXmag/view)
